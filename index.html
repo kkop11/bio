@@ -144,6 +144,36 @@
   .card h3 { margin: 8px 0 0; font-size: 1.2rem; }
   .card p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
   .more { margin-top: auto; padding-top: 14px; color: #8dffc0; font-weight: 800; font-size: 16px; }
+  .feature {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px;
+    text-decoration: none;
+    margin: 0 0 22px; padding: 22px 24px;
+    border-radius: 22px;
+    background:
+      radial-gradient(circle at 88% 20%, rgba(61, 255, 138, .16), transparent 32%),
+      linear-gradient(120deg, rgba(18, 42, 34, .92), rgba(8, 16, 14, .9));
+    border: 1px solid rgba(61, 255, 138, .35);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .28);
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .feature:hover, .feature:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(61, 255, 138, .55);
+  }
+  .feature .icon {
+    width: 56px; height: 56px; border-radius: 16px; flex: none;
+    display: grid; place-items: center;
+    background: rgba(8, 18, 14, .8);
+    border: 1px solid rgba(61, 255, 138, .22);
+  }
+  .feature .body { flex: 1 1 220px; min-width: 0; text-align: left; }
+  .feature h3 { margin: 0; font-size: 1.35rem; }
+  .feature p { margin: 4px 0 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
+  .feature .tag {
+    display: inline-block; margin: 0 0 6px; padding: 2px 10px; border-radius: 999px;
+    background: rgba(61, 255, 138, .14); color: #9dffc8; font-size: 12.5px; font-weight: 800; letter-spacing: .04em;
+  }
+  .feature .more { color: #8dffc0; font-weight: 800; font-size: 16px; flex: none; white-space: nowrap; }
   footer { text-align: center; color: #7f9d91; padding: 8px 16px 36px; font-size: 15px; }
   @keyframes stars { to { transform: translate3d(-240px, -240px, 0); } }
   @keyframes twinkle { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
@@ -168,6 +198,7 @@
     .grid { grid-template-columns: 1fr 1fr; }
     .card, .card:nth-child(n+4) { grid-column: auto; min-height: 0; }
     .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .feature { flex-direction: column; align-items: flex-start; }
   }
   @media (max-width: 700px) {
     header {
@@ -212,6 +243,7 @@
     <a href="study.html">สิ่งมีชีวิต</a>
     <a href="chemistry.html">เคมีของชีวิต</a>
     <a href="cell.html">เซลล์</a>
+    <a href="cell-3d.html">เซลล์ 3D</a>
     <a href="genetics.html">พันธุกรรม</a>
     <a href="genes.html">ยีน</a>
     <a href="dna-technology.html">DNA เทค</a>
@@ -241,6 +273,7 @@
       <h1>Biology<span>Learning</span></h1>
       <div class="actions">
         <a class="btn main" href="study.html">เริ่มเรียน</a>
+        <a class="btn ghost" href="cell-3d.html" aria-label="เข้าห้องแล็บเซลล์ 3 มิติ">ลองเซลล์ 3D</a>
         <a class="btn ghost" href="#labs">ดูบทเรียน</a>
       </div>
     </div>
@@ -325,7 +358,16 @@
   <section class="journey" id="labs">
     <p class="kicker">YOUR BIOLOGY JOURNEY</p>
     <h2>เริ่มในห้องแล็บชีววิทยา</h2>
-    <p class="sub">ยี่สิบสามบท เลือกอันที่อยากลอง</p>
+    <p class="sub">ยี่สิบสามบท + ห้องแล็บเซลล์ 3 มิติ เลือกอันที่อยากลอง</p>
+    <a class="feature" href="cell-3d.html" aria-label="เข้าห้องแล็บ 3D Cell Laboratory สำรวจเซลล์สัตว์และเซลล์พืชแบบสามมิติ">
+      <span class="icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><ellipse cx="16" cy="16" rx="12" ry="10" stroke="#b8ffd8" stroke-width="1.8"/><circle cx="14" cy="15" r="4.5" fill="#3dff8a"/><circle cx="22" cy="11" r="2" fill="#9dffc8"/><path d="M8 20c3-1 5-4 8-5" stroke="#7dffb8" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+      <div class="body">
+        <span class="tag">ใหม่ · เต็มจอ · ปุ่มลอย</span>
+        <h3>3D Cell Laboratory</h3>
+        <p>หมุน ซูม และคลิกออร์แกเนลล์ในเซลล์สัตว์/เซลล์พืชแบบสามมิติ พร้อมแผงข้อมูลและเครื่องมือลอยทับบนภาพ</p>
+      </div>
+      <span class="more">เข้าห้องแล็บ 3D →</span>
+    </a>
     <div class="grid">
       <a class="card" href="study.html">
         <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8ffd8" stroke-width="1.7"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4" stroke-linecap="round"/></svg></span>
@@ -342,7 +384,7 @@
       <a class="card" href="cell.html">
         <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8ffd8" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></span>
         <h3>เซลล์</h3>
-        <p>ออร์แกเนลล์และออสโมซิส</p>
+        <p>ออร์แกเนลล์ ออสโมซิส และลิงก์ไปห้องแล็บ 3D</p>
         <span class="more">เข้าเรียน →</span>
       </a>
       <a class="card" href="genetics.html">
