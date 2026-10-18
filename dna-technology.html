@@ -57,6 +57,7 @@ th{background:var(--panel2);color:var(--acc)}
 .stagebar span{flex:1;min-width:40px;text-align:center;font-size:11px;padding:4px 2px;border-radius:6px;background:var(--panel2);color:var(--mut);border:1px solid var(--line)}
 .stagebar span.on{background:#134e4a;color:#fff;border-color:var(--acc)}
 </style>
+<link rel="stylesheet" href="float-lab.css">
 </head>
 <body>
 <header>
@@ -562,5 +563,6 @@ function loop(now){const dt=Math.min(0.05,(now-last)/1000);last=now;update(dt);
   const {g,w,h}=fit($('#main'));g.clearRect(0,0,w,h);[null,drawM1,drawM2,drawM3,drawM4][S.mode](g,w,h);drawChart();requestAnimationFrame(loop);}
 resetM1();resetM2();resetM4();newCase();setMode(1);requestAnimationFrame(loop);
 </script>
+<script src="float-lab.js"></script>
 </body>
 </html>

@@ -44,6 +44,7 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}td,th{border:1px soli
 .seq{font-family:Consolas,monospace;font-size:11px;word-break:break-all;line-height:1.5}
 .seq .d{background:#7f1d1d;color:#fff}
 </style>
+<link rel="stylesheet" href="float-lab.css">
 </head>
 <body>
 <header><a href="index.html" style="color:#8dffc0;text-decoration:none;font-weight:700;margin-right:6px">← หน้าแรก</a><h1>🦋 วิวัฒนาการ (Evolution)</h1><span class="sub">ห้องปฏิบัติการเสมือนจริง ชีววิทยา ม.4–ม.6</span></header>
@@ -401,5 +402,6 @@ let last=performance.now();
 function loop(now){const dt=Math.min(0.05,(now-last)/1000);last=now;update(dt);const {g,w,h}=fit($('#main'));g.clearRect(0,0,w,h);[null,drawM1,drawM2,drawM3,drawM4][S.mode](g,w,h);drawChart();requestAnimationFrame(loop);}
 buildSeqs();initM1();initM2();initM3();setMode(1);requestAnimationFrame(loop);
 </script>
+<script src="float-lab.js"></script>
 </body>
 </html>

@@ -41,6 +41,7 @@ table{width:100%;border-collapse:collapse;font-size:12px}td,th{border:1px solid 
 .hint{font-size:12px;color:var(--mut);line-height:1.5}
 .chart{height:250px;background:#07100d;border-radius:8px}
 </style>
+<link rel="stylesheet" href="float-lab.css">
 </head>
 <body>
 <header><a href="index.html" style="color:#8dffc0;text-decoration:none;font-weight:700;margin-right:6px">← หน้าแรก</a><h1>🌱 การควบคุมการเจริญเติบโตและการตอบสนองของพืช (Plant Growth Regulation &amp; Responses)</h1><span class="sub">ห้องปฏิบัติการเสมือนจริง ชีววิทยา ม.4–ม.6</span></header>
@@ -364,5 +365,6 @@ function loop(now){const dt=Math.min(0.05,(now-last)/1000);last=now;const sdt=S.
   const {g,w,h}=fit($('#main'));g.clearRect(0,0,w,h);[null,drawM1,drawM2,drawM3,drawM4][S.mode](g,w,h);drawChart();accT+=dt;if(accT>0.4){accT=0;updateText();}requestAnimationFrame(loop);}
 setMode(1);requestAnimationFrame(loop);
 </script>
+<script src="float-lab.js"></script>
 </body>
 </html>

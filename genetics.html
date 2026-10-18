@@ -93,6 +93,7 @@
   }
 
 </style>
+<link rel="stylesheet" href="float-lab.css">
 </head>
 <body>
 <header>
@@ -519,5 +520,6 @@ function loop(now){const dt=Math.min(.05,(now-last)/1000||0); last=now; if(state
 renderControls(); runCross(); side(); requestAnimationFrame(loop);
 document.documentElement.dataset.ready='genetics';
 </script>
+<script src="float-lab.js"></script>
 </body>
 </html>

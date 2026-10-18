@@ -44,6 +44,7 @@ table{width:100%;border-collapse:collapse;font-size:12.5px}td,th{border:1px soli
 .stagebar span{flex:1;min-width:22px;text-align:center;font-size:11px;padding:3px 1px;border-radius:5px;background:var(--panel2);color:var(--mut);border:1px solid var(--line);cursor:pointer}
 .stagebar span.on{background:#701a4b;color:#fff;border-color:var(--acc)}
 </style>
+<link rel="stylesheet" href="float-lab.css">
 </head>
 <body>
 <header><a href="index.html" style="color:#8dffc0;text-decoration:none;font-weight:700;margin-right:6px">← หน้าแรก</a><h1>🌸 การสืบพันธุ์ของพืชดอก (Angiosperm Reproduction &amp; Development)</h1><span class="sub">ห้องปฏิบัติการเสมือนจริง ชีววิทยา ม.4–ม.6</span></header>
@@ -428,5 +429,6 @@ let last=performance.now();
 function loop(now){const dt=Math.min(0.05,(now-last)/1000);last=now;update(dt);const {g,w,h}=fit($('#main'));g.clearRect(0,0,w,h);[null,drawM1,drawM2,drawM3,drawM4][S.mode](g,w,h);drawChart();requestAnimationFrame(loop);}
 initM3();setMode(1);requestAnimationFrame(loop);
 </script>
+<script src="float-lab.js"></script>
 </body>
 </html>

@@ -101,6 +101,7 @@
   }
 
 </style>
+<link rel="stylesheet" href="float-lab.css">
 </head>
 <body>
 <header>
@@ -526,5 +527,6 @@ function loop(now){ const dt=Math.min(0.05,(now-last)/1000||0); last=now; if(sta
 renderControls(); side(); requestAnimationFrame(loop);
 document.documentElement.dataset.ready='chemistry';
 </script>
+<script src="float-lab.js"></script>
 </body>
 </html>
